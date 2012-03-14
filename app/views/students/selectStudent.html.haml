@@ -1,0 +1,9 @@
+/ app/views/students/selectStudent.html.haml
+%form{:method => "post", :action => "updateStudent"}
+  %select{:name => "student_id", :size => 6}
+    - @students.each do |s|
+      %option{:value => s.id}
+        = s.first_name + " " + s.last_name
+  %br
+  %br
+  %input{:type => "submit", :value => "Select"}
